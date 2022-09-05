@@ -3,9 +3,9 @@
 This repository is an experimental project for better understanding the challenges and possible solutions for users' pain around upgrading and downgrading projects to different LabVIEW versions as described in the blog article [Upgrading to New LabVIEW Versions is for People Who Don’t Have Friends.](https://create.vi/upgrading-to-new-labview-versions-is-for-people-who-dont-have-friends-52b85953430c).  What users want is to be able to easily work on LabVIEW projects without worrying about which version of LabVIEW they are using.
 
 ## Background
-Saving a project for a previous LabVIEW version is a pretty klunky process.  There is *File >> Save for Previous Version...* feature in LabVIEW that can be done for individual VIs, Libraries, Classes, and Projects.  However, it does not work in a way that makes the most common use cases easy.
+Saving a project for a previous LabVIEW version is a pretty klunky process.  There is *File >> Save for Previous Version...* feature in LabVIEW that can be done for individual VIs, Libraries, Classes, and Projects.
 
-One key challenge with performing a "Save for Previous Version" on a project, library, or class is a result of the fact that it works differently for VIs/CTLs than it does for Projects, Libraries, and Classes.
+However, this feature does not work in a way that allows for several common and important use cases.  One key challenge with performing a "Save for Previous Version" on a project, library, or class is a result of the fact that it works differently for VIs/CTLs than it does for Projects, Libraries, and Classes; which we'll describe next.
 
 ### "Save for Previous Version" on VIs and Controls
 

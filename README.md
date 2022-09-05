@@ -1,6 +1,10 @@
 # A Version Explorer for LabVIEW
 
-A project for exploring the challenges and possible solutions for users' pain around upgrading and downgrading projects to different LabVIEW versions.
+This is an experimental project for better understanding the challenges and possible solutions for users' pain around upgrading and downgrading projects to different LabVIEW versions.  What users want is to be able to easily work on LabVIEW projects without worrying about which version of LabVIEW they are using.
+
+A good possible solution to this would be to be able to "pin" a project to a specific LabVIEW version [as desribed on Jim Kring's blog](https://create.vi/upgrading-to-new-labview-versions-is-for-people-who-dont-have-friends-52b85953430c#4891) and shown in the screenshot below:
+
+![image](https://user-images.githubusercontent.com/381432/188509924-f87d937b-bd16-4f39-9b3e-818b7d81b28c.png)
 
 ## Background
 Saving a project for a previous LabVIEW version is a pretty klunky process.  There are features (*File >> Save for Previous Version...*) that can be done for individual VIs, Libraries, and Projects.  However, this feature in LabVIEW it does not actually make the more common use cases straightforward or easy.

@@ -78,12 +78,12 @@ Considerations and Ideas:
 ## Use Cases and Value Drivers
 The following are specific use cases that explain the need/value for a better *Save for Previous Version* feature in LabVIEW.
 
-### Community Contributions Recieved in Newer LabVIEW Versions
+### An Author of a Library Receives Contributed Code Saved in a Newer LabVIEW Version
 - Scenario: Contributors submit code in newer LabVIEW versions than the pinned LabVIEW version.  The submitted code needs to be saved for the pinned LabVIEW vesion before it can be merged into the project project.
 - Value: Makes community/team conribution to projects easier/possible for contributors who only have accesss to newer LabVIEW versions.
-### Files are Accidentally Edited in Newer LabVIEW Versions
+### An Author Accidentally Edits Files in Newer LabVIEW Versions (and doesn't want to lose the worl)
 - Scenario: While working on the project, a developer accidentally opens and works on project files in a newer LabVIEW version and does not wish to throw away those changes. They wish to keep their work and simply save the changed files to the pinned LabVIEW version.
 - Value: Saves developers time when they accidentally open LabVIEW files in newer LabVIEW versions.
-### A Distribution Supporting Older LabVIEW Vesion is Desired
+### An Author Wants Support More Users by Distributing thier Library Saved in an Older Version of LabVIEW
 - Scenarios: The development team wishes to develop in a newer LabVIEW version (due to improved IDE usability and other features), yet they wish to build a distribution that supports earlier LabVIEW versions. As such, they wish to perform a step at build-time to save the files for a specific, earlier LabVIEW version.
 -  Value: Projects can deliver more value to a wider audience since the distribution supports older LabVIEW versions.

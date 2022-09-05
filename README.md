@@ -1,9 +1,13 @@
 # A Version Explorer for LabVIEW
 
-This repository is an experimental project for better understanding the challenges and possible solutions for users' pain around upgrading and downgrading projects to different LabVIEW versions as described in the blog article [Upgrading to New LabVIEW Versions is for People Who Don’t Have Friends.](https://create.vi/upgrading-to-new-labview-versions-is-for-people-who-dont-have-friends-52b85953430c).  What users want is to be able to easily work on LabVIEW projects without worrying about which version of LabVIEW they are using.
+This repository is an experimental project for better understanding the challenges and possible solutions for users' pain around **upgrading and downgrading projects to different LabVIEW versions** as described in the blog article [Upgrading to New LabVIEW Versions is for People Who Don’t Have Friends](https://create.vi/upgrading-to-new-labview-versions-is-for-people-who-dont-have-friends-52b85953430c).
+
+Users want to easily work on LabVIEW projects without worrying about which version of LabVIEW the project is "supposed" to be saved in. Nor do they want to cause problem for other developers working on the project.  However, when people accidentally/inadvertently work on projects in newer LabVIEW versions it can cause problems for them and others.
 
 ## Background
 Saving a project for a previous LabVIEW version is a pretty klunky process.  There is *File >> Save for Previous Version...* feature in LabVIEW that can be done for individual VIs, Libraries, Classes, and Projects.
+
+<img width="669" alt="image" src="https://user-images.githubusercontent.com/381432/188520473-379f6d64-23c0-4005-bc33-4de091966390.png">
 
 However, this feature does not work in a way that allows for several common and important use cases.  One key challenge with performing a "Save for Previous Version" on a project, library, or class is a result of the fact that it works differently for VIs/CTLs than it does for Projects, Libraries, and Classes; which we'll describe next.
 
@@ -25,12 +29,6 @@ However, for our use case where the contents of user.lib are installed by OpenG 
 
 There are some possibilities for how to solve this problem, but it requires jumping through some hoops and feels like a hack.
 
-Considerations:
-
-- If the older/target LabVIEW version is installed and also has ALL OF THE REQUIRED USER.LIB VIs installed, then would be possible to re-write/fix the linker info of the exported VIs in the older version of LabVIEW.
-- We cannot re-write the linker info in the newer version of LabVIEW (which we know has those required VIs installed) because "Write Linker Info" cannot operate on VIs from older LabVIEW Versions (it will raise an error message about the VIs being too old to upgrade).
-
-
 ## Common Use Cases
 The following are common use cases for wanting to to down-save the version of LabVIEW VIs:
 - **Community Contributions Recieved in Newer LabVIEW Versions**
@@ -42,7 +40,6 @@ The following are common use cases for wanting to to down-save the version of La
 - **A Distribution Supporting Older LabVIEW Vesion is Desired**
     - Scenarios: The development team wishes to develop in a newer LabVIEW version (due to improved IDE usability and other features), yet they wish to build a distribution that supports earlier LabVIEW versions. As such, they wish to perform a step at build-time to save the files for a specific, earlier LabVIEW version.
     -  Value: Projects can deliver more value to a wider audience since the distribution supports older LabVIEW versions.
-
 
 ## Workflow for Recovering from Unwanted Source Code Upgrade
 Here is a description of all the steps a user goes through from the point (A) they realize their project or some of its files have been saved in a newer LabVIEW version to (B) they have fixed the problem:
@@ -68,7 +65,19 @@ A good possible solution to this would be to be able to "pin" a project to a spe
 
 ![image](https://user-images.githubusercontent.com/381432/188509924-f87d937b-bd16-4f39-9b3e-818b7d81b28c.png)
 
+## Notes on Possible Solutions
+
+### Solving the Copy of user.lib Problem
+In thinking about a solution to the user.lib problem, basically what's needed is to have the final output (the down-saved VIs, in place) link to the installed user.lib VIs instead of the ones from the newer LabVIEW version.
+
+Considerations and Ideas:
+- If the older/target LabVIEW version is installed and also has ALL OF THE REQUIRED USER.LIB VIs installed, then would be possible to re-write/fix the linker info of the exported VIs in the older version of LabVIEW.
+    - Is it reasonable to assume that the user has the older LabVIEW version on the same machine as the newer LabVIEW version?
+- We cannot re-write the linker info in the newer version of LabVIEW (which we know has those required VIs installed) because "Write Linker Info" cannot operate on VIs from older LabVIEW Versions (it will raise an error message about the VIs being too old to upgrade).
+
 ## Use Cases and Value Drivers
+The following are specific use cases that explain the need/value for a better *Save for Previous Version* feature in LabVIEW.
+
 ### Community Contributions Recieved in Newer LabVIEW Versions
 - Scenario: Contributors submit code in newer LabVIEW versions than the pinned LabVIEW version.  The submitted code needs to be saved for the pinned LabVIEW vesion before it can be merged into the project project.
 - Value: Makes community/team conribution to projects easier/possible for contributors who only have accesss to newer LabVIEW versions.

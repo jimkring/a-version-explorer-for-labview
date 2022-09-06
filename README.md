@@ -70,6 +70,14 @@ A good possible solution to this would be to be able to "pin" a project to a spe
 
 ## Notes on Possible Solutions
 
+### A Version Explorer UI
+
+A working protype is shown below.
+
+<img width="643" alt="image" src="https://user-images.githubusercontent.com/381432/188571721-cbd67bf4-69d2-4f76-b2de-843e9aff8dc2.png">
+
+The source for this VI is here: `.\experiments\save-for-previous-version\source\A Version Explorer - UI.vi`
+
 ### Solving the Copy of user.lib Problem
 In thinking about a solution to the user.lib problem, basically what's needed is to have the final output (the down-saved VIs, in place) link to the installed user.lib VIs instead of the ones from the newer LabVIEW version.
 

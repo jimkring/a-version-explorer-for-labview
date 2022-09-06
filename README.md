@@ -29,17 +29,24 @@ However, for our use case where the contents of user.lib are installed by OpenG 
 
 There are some possibilities for how to solve this problem, but it requires jumping through some hoops and feels like a hack.
 
-## Common Use Cases
-The following are common use cases for wanting to to down-save the version of LabVIEW VIs:
-- **Community Contributions Recieved in Newer LabVIEW Versions**
-    - Scenario: Contributors submit code in newer LabVIEW versions than the pinned LabVIEW version.  The submitted code needs to be saved for the pinned LabVIEW vesion before it can be merged into the project project.
-    - Value: Makes community/team conribution to projects easier/possible for contributors who only have accesss to newer LabVIEW versions.
-- **Files are Accidentally Edited in Newer LabVIEW Versions**
-    - Scenario: While working on the project, a developer accidentally opens and works on project files in a newer LabVIEW version and does not wish to throw away those changes. They wish to keep their work and simply save the changed files to the pinned LabVIEW version.
-    - Value: Saves developers time when they accidentally open LabVIEW files in newer LabVIEW versions.
-- **A Distribution Supporting Older LabVIEW Vesion is Desired**
-    - Scenarios: The development team wishes to develop in a newer LabVIEW version (due to improved IDE usability and other features), yet they wish to build a distribution that supports earlier LabVIEW versions. As such, they wish to perform a step at build-time to save the files for a specific, earlier LabVIEW version.
-    -  Value: Projects can deliver more value to a wider audience since the distribution supports older LabVIEW versions.
+Considerations:
+
+- If the older/target LabVIEW version is installed and also has ALL OF THE REQUIRED USER.LIB VIs installed, then would be possible to re-write/fix the linker info of the exported VIs in the older version of LabVIEW.
+- We cannot re-write the linker info in the newer version of LabVIEW (which we know has those required VIs installed) because "Write Linker Info" cannot operate on VIs from older LabVIEW Versions (it will raise an error message about the VIs being too old to upgrade).
+
+## Use Cases and Value Drivers
+The following are some high-value use cases for developers.
+
+### Community Contributions Recieved in Newer LabVIEW Versions
+- Scenario: Contributors submit code in newer LabVIEW versions than the pinned LabVIEW version.  The submitted code needs to be saved for the pinned LabVIEW vesion before it can be merged into the project project.
+- Value: Makes community/team conribution to projects easier/possible for contributors who only have accesss to newer LabVIEW versions.
+### Files are Accidentally Edited in Newer LabVIEW Versions
+- Scenario: While working on the project, a developer accidentally opens and works on project files in a newer LabVIEW version and does not wish to throw away those changes. They wish to keep their work and simply save the changed files to the pinned LabVIEW version.
+- Value: Saves developers time when they accidentally open LabVIEW files in newer LabVIEW versions.
+### A Distribution Supporting Older LabVIEW Vesion is Desired
+- Scenarios: The development team wishes to develop in a newer LabVIEW version (due to improved IDE usability and other features), yet they wish to build a distribution that supports earlier LabVIEW versions. As such, they wish to perform a step at build-time to save the files for a specific, earlier LabVIEW version.
+-  Value: Projects can deliver more value to a wider audience since the distribution supports older LabVIEW versions.
+
 
 ## Workflow for Recovering from Unwanted Source Code Upgrade
 Here is a description of all the steps a user goes through from the point (A) they realize their project or some of its files have been saved in a newer LabVIEW version to (B) they have fixed the problem:
@@ -65,6 +72,7 @@ A good possible solution to this would be to be able to "pin" a project to a spe
 
 ![image](https://user-images.githubusercontent.com/381432/188509924-f87d937b-bd16-4f39-9b3e-818b7d81b28c.png)
 
+
 ## Notes on Possible Solutions
 
 ### Solving the Copy of user.lib Problem
@@ -75,15 +83,3 @@ Considerations and Ideas:
     - Is it reasonable to assume that the user has the older LabVIEW version on the same machine as the newer LabVIEW version?
 - We cannot re-write the linker info in the newer version of LabVIEW (which we know has those required VIs installed) because "Write Linker Info" cannot operate on VIs from older LabVIEW Versions (it will raise an error message about the VIs being too old to upgrade).
 
-## Use Cases and Value Drivers
-The following are specific use cases that explain the need/value for a better *Save for Previous Version* feature in LabVIEW.
-
-### An Author of a Library Receives Contributed Code Saved in a Newer LabVIEW Version
-- Scenario: Contributors submit code in newer LabVIEW versions than the pinned LabVIEW version.  The submitted code needs to be saved for the pinned LabVIEW vesion before it can be merged into the project project.
-- Value: Makes community/team conribution to projects easier/possible for contributors who only have accesss to newer LabVIEW versions.
-### An Author Accidentally Edits Files in Newer LabVIEW Versions (and doesn't want to lose the worl)
-- Scenario: While working on the project, a developer accidentally opens and works on project files in a newer LabVIEW version and does not wish to throw away those changes. They wish to keep their work and simply save the changed files to the pinned LabVIEW version.
-- Value: Saves developers time when they accidentally open LabVIEW files in newer LabVIEW versions.
-### An Author Wants Support More Users by Distributing thier Library Saved in an Older Version of LabVIEW
-- Scenarios: The development team wishes to develop in a newer LabVIEW version (due to improved IDE usability and other features), yet they wish to build a distribution that supports earlier LabVIEW versions. As such, they wish to perform a step at build-time to save the files for a specific, earlier LabVIEW version.
--  Value: Projects can deliver more value to a wider audience since the distribution supports older LabVIEW versions.

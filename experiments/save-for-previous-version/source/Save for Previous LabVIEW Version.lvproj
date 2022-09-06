@@ -18,6 +18,7 @@
 		<Item Name="Test Session.vi" Type="VI" URL="../Test Session.vi"/>
 		<Item Name="Save for Previous Version.lvlib" Type="Library" URL="../Save for Previous Version.lvlib"/>
 		<Item Name="A Version Explorer.lvlib" Type="Library" URL="../A Version Explorer.lvlib"/>
+		<Item Name=".vipc" Type="Document" URL="../../../../../../jki-tcp-server/source/.vipc"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Build Error Cluster__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/error/error.llb/Build Error Cluster__ogtk.vi"/>

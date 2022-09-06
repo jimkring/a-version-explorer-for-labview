@@ -157,11 +157,12 @@
 				<Property Name="Bld_buildSpecName" Type="Str">My Packed Library</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
 				<Property Name="Bld_localDestDir" Type="Path">../build/PPL</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{8A3400EB-FF44-4886-B9EB-9732742A1385}</Property>
-				<Property Name="Bld_version.build" Type="Int">3</Property>
+				<Property Name="Bld_version.build" Type="Int">5</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">A Version Explorer.lvlibp</Property>
 				<Property Name="Destination[0].path" Type="Path">../build/PPL/A Version Explorer.lvlibp</Property>
@@ -171,7 +172,7 @@
 				<Property Name="Destination[1].path" Type="Path">../build/PPL</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="PackedLib_callersAdapt" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{B385A127-F4C4-4B18-A4B0-82EF4E5DB471}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{54BCF9C6-FA03-4B25-9D02-C68CFE3622C6}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/A Version Explorer.lvlib</Property>

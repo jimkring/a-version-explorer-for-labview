@@ -74,7 +74,7 @@ A good possible solution to this would be to be able to "pin" a project to a spe
 
 A working protype is shown below.
 
-<img width="643" alt="image" src="https://user-images.githubusercontent.com/381432/188571721-cbd67bf4-69d2-4f76-b2de-843e9aff8dc2.png">
+<img width="672" alt="image" src="https://user-images.githubusercontent.com/381432/188572165-66488776-cdf5-44fa-9ebc-2e268600c6e3.png">
 
 The source for this VI is here: `.\experiments\save-for-previous-version\source\A Version Explorer - UI.vi`
 

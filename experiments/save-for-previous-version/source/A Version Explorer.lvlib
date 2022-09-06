@@ -4,4 +4,5 @@
 	<Property Name="NI.Lib.SourceVersion" Type="Int">536903680</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
+	<Item Name="A Version Explorer - UI.vi" Type="VI" URL="../A Version Explorer - UI.vi"/>
 </Library>

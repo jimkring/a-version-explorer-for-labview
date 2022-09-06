@@ -29,11 +29,6 @@ However, for our use case where the contents of user.lib are installed by OpenG 
 
 There are some possibilities for how to solve this problem, but it requires jumping through some hoops and feels like a hack.
 
-Considerations:
-
-- If the older/target LabVIEW version is installed and also has ALL OF THE REQUIRED USER.LIB VIs installed, then would be possible to re-write/fix the linker info of the exported VIs in the older version of LabVIEW.
-- We cannot re-write the linker info in the newer version of LabVIEW (which we know has those required VIs installed) because "Write Linker Info" cannot operate on VIs from older LabVIEW Versions (it will raise an error message about the VIs being too old to upgrade).
-
 ## Use Cases and Value Drivers
 The following are some high-value use cases for developers.
 

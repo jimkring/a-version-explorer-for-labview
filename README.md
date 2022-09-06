@@ -67,7 +67,6 @@ A good possible solution to this would be to be able to "pin" a project to a spe
 
 ![image](https://user-images.githubusercontent.com/381432/188509924-f87d937b-bd16-4f39-9b3e-818b7d81b28c.png)
 
-
 ## Notes on Possible Solutions
 
 ### A Version Explorer UI
@@ -77,6 +76,14 @@ A working protype is shown below.
 <img width="672" alt="image" src="https://user-images.githubusercontent.com/381432/188572165-66488776-cdf5-44fa-9ebc-2e268600c6e3.png">
 
 The source for this VI is here: `.\experiments\save-for-previous-version\source\A Version Explorer - UI.vi`
+
+This prototype works as follows:
+
+- Saves VIs/CTLs in place using the `VI.Save for Previous` method
+- Saves LVLIBs and LVCLASSes to a temp directory (using the `Save for Previous` methods of those project item types) and then copies the output .lvlib or .lvclass file, replacing the original file.
+- Directly modifies the .lvproj file XML data, setting the version information.
+
+This seems to work pretty well.
 
 ### Solving the Copy of user.lib Problem
 In thinking about a solution to the user.lib problem, basically what's needed is to have the final output (the down-saved VIs, in place) link to the installed user.lib VIs instead of the ones from the newer LabVIEW version.

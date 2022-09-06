@@ -6,7 +6,7 @@ Users want to easily work on LabVIEW projects without worrying about which versi
 
 ## A Version Explorer UI
 
-A working protype is shown in the screenshot below.
+A working protype is shown in the screenshot below. You can [download it from releases](https://github.com/jimkring/a-version-explorer-for-labview/releases).
 
 <img width="672" alt="image" src="https://user-images.githubusercontent.com/381432/188572165-66488776-cdf5-44fa-9ebc-2e268600c6e3.png">
 
